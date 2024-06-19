@@ -152,4 +152,19 @@ class Panneau
 
         return $this;
     }
+
+    public function getLastAction(): ?Action
+    {
+        $lastAction = null;
+        $maxTimestamp = null;
+
+        foreach ($this->actions as $action) {
+            if ($maxTimestamp === null || $action->getTimestamp() > $maxTimestamp) {
+                $maxTimestamp = $action->getTimestamp();
+                $lastAction = $action;
+            }
+        }
+
+        return $lastAction;
+    }
 }
