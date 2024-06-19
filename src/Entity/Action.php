@@ -20,7 +20,7 @@ class Action
     #[ORM\JoinColumn(nullable: false)]
     private ?Panneau $panneau = null;
 
-    #[ORM\Column(type: Types::TIME_MUTABLE)]
+    #[ORM\Column(type: Types::DATETIME_MUTABLE)]
     private ?\DateTimeInterface $timestamp = null;
 
     #[ORM\Column(type: Types::TEXT)]
